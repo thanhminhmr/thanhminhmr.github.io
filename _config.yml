@@ -1,7 +1,7 @@
 # Site settings
-title: Title
-email: email@domain.com
-description: description goes here
+title: MrMaThaMi's Blog
+email: thanhminh.mr@gmail.com
+description: A place to share my experiment.
 baseurl: "/"
 url: "https://thanhminhmr.github.io/"
 twitter_username: tname
@@ -10,4 +10,5 @@ github_username: gname
 # Build settings
 markdown: kramdown
 
+# Theme settings
 theme: jekyll-theme-tactile
