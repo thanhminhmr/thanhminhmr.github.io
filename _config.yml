@@ -1,1 +1,11 @@
-theme: jekyll-theme-tactile
+# Site settings
+title: Title
+email: email@domain.com
+description: description goes here
+baseurl: "/jekyll"
+url: "http://aggex.github.io/jekyll"
+twitter_username: tname
+github_username: gname
+
+# Build settings
+markdown: kramdown
