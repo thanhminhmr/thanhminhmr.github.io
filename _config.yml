@@ -1,14 +1,26 @@
 # Site settings
-title: MrMaThaMi's Blog
-email: thanhminh.mr@gmail.com
-description: A place to share my experiment.
-baseurl: "/"
-url: "https://thanhminhmr.github.io/"
-twitter_username: tname
-github_username: gname
+title:          MrMaThaMi
+description:    My diary, mostly about *computary* things…
+url:            https://thanhminhmr.github.io
+
+# Author
+author:
+  name:         Thanh Minh
+  url:          https://thanhminhmr.github.io
+  email:        thanhminh.mr@gmail.com
 
 # Build settings
-markdown: kramdown
+markdown:       kramdown
 
-# Theme settings
-theme: jekyll-theme-tactile
+# Theme
+remote_theme:   chesterhow/tale
+
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year/:month/:day/:title
+paginate:       10
