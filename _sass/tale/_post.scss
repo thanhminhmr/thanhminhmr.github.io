@@ -1,0 +1,96 @@
+.post {
+  display: block;
+  padding: 3rem 0;
+
+  &-info {
+    color: $default-tint;
+    font-family: $serif-secondary;
+    letter-spacing: 0.5px;
+    text-align: center;
+
+    span {
+      font-style: italic;
+    }
+  }
+
+  &-title {
+    color: $default-shade;
+    font-family: $sans-serif;
+    font-size: 3.5rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  &-line {
+    border-top: 0.4rem solid $default-shade;
+    display: block;
+    margin: 0 auto 3rem;
+    width: 4rem;
+  }
+
+  p {
+    margin: 0 0 1rem;
+    text-align: justify;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  span {
+    display: block;
+    
+    &.float {
+      &.right {
+        margin: 0 0 1rem 1rem;
+        max-width: 30%;
+        height: auto;
+        float: right;
+      }
+      &.left {
+        margin: 0 1rem 1rem 0;
+        max-width: 30%;
+        height: auto;
+        float: left;
+      }
+      img {
+        margin: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+    &.center {
+      margin: 0 0 1rem;
+      
+      img {
+        margin: auto;
+        width: auto;
+        max-height: 30vh;
+      }
+    }
+    &.inline {
+      img {
+        display: inline-block;
+        left: 0;
+        transform: none;
+        width: auto;
+        height: 1rem;
+        vertical-align: text-top;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    em {
+      color: $default-tint;
+      display: block;
+      font-family: $sans-serif;
+      font-size: 0.9rem;
+      font-style: normal;
+      text-align: center;
+    }
+  }
+  
+  .clear {
+    clear: both; 
+  }
+}

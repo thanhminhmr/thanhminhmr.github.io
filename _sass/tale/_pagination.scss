@@ -1,0 +1,23 @@
+.pagination {
+  border-top: .5px solid $grey-2;
+  font-family: $serif-secondary;
+  padding-top: 1.5rem;
+  position: relative;
+  text-align: center;
+
+  a {
+    color: $default-shade;
+    font-size: 1.1rem;
+    opacity: .6;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  span {
+    font-size: 1.3rem;
+    color: $default-color;
+  }
+}

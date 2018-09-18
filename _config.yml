@@ -1,26 +1,38 @@
 # Site settings
 title:          MrMaThaMi
 description:    My diary, mostly about *computary* things…
-url:            https://thanhminhmr.github.io
-
-# Author
-author:
-  name:         Thanh Minh
-  url:          https://thanhminhmr.github.io
-  email:        thanhminh.mr@gmail.com
+url:            "https://thanhminhmr.github.io"
+image:          "/assets/MrMaThaMi.png"
+author:         MrMaThaMi
+email:          thanhminh.mr@gmail.com
 
 # Build settings
 markdown:       kramdown
 
-# Theme
-remote_theme:   chesterhow/tale
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
 # Gems
 plugins:
   - jekyll-feed
-  - jekyll-paginate
+  - jekyll-paginate-v2
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
 permalink:      /:year/:month/:day/:title
-paginate:       10
+
+pagination:
+  enabled: true
+  collection: 'posts'
+
+  per_page: 10
+
+  permalink: '/page/:num.html' # Pages are simple html files
+  title: ':title - #:num'
+
+  sort_field: 'date'
+  sort_reverse: true
+
+  category: 'posts'

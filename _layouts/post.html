@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
+
+    {% if page.date %}
+      <br>
+      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    {% endif %}
+  </div>
+
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-line"></div>
+
+  {{ content }}
+
+  <div class="clear"></div>
+</div>
+
+
+<div class="pagination">
+  {% if page.next.url %}
+    <a href="{{ page.next.url }}">&#8592; {{ page.next.title }}</a>
+    {% if page.previous.url %}
+      <br/>
+    {% endif %}
+  {% endif %}
+  {% if page.previous.url %}
+    <a href="{{ page.previous.url }}" class="right arrow">{{ page.previous.title }} &#8594;</a>
+  {% endif %}
+</div>

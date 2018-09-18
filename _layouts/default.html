@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if page.title == site.title %}
+      {% assign title = site.title %}
+    {% else %}
+      {% capture title %}{{ page.title }} &middot; {{ site.title }}{% endcapture %}
+    {% endif %}
+    {% if page.description %}
+      {% assign description = page.description %}
+    {% elsif page.no_summary %}
+      {% assign description = site.description %}
+    {% else %}
+      {% capture description %}{{ page.content | strip_html | truncatewords: 30 }}{% endcapture %}
+    {% endif %}
+    {% if page.thumbnail %}
+      {% assign thumbnail = page.thumbnail %}
+    {% else %}
+      {% assign thumbnail = site.image %}
+    {% endif %}
+
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.url | prepend: site.url }}" />
+    <meta property="og:image" content="{{ thumbnail | prepend: site.url }}" />
+    <meta property="og:description" content="{{ description }}" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+    <!-- RSS -->
+    {% feed_meta %}
+  </head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="{{ site.baseurl }}/">
+          <h2 class="nav-title">{{ site.title }}</h2>
+        </a>
+        <ul>
+          <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+          <li><a href="{{ site.baseurl }}/">Posts</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+      </span>
+    </footer>
+  </body>
+</html>
